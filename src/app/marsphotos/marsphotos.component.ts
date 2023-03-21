@@ -14,6 +14,7 @@ export class MarsphotosComponent implements OnInit {
   constructor (private hpservice : MarspicService) {}
 
   PhotoList : any;
+  p: number = 1;
 
 
 

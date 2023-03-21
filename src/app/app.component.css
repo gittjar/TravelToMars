@@ -1,0 +1,10 @@
+.siteHeader{
+    width: 100%;
+    height: 200px;
+    border-top: 4px #cccccc solid;
+    border-bottom: 4px #cccccc solid;
+    overflow: hidden;
+  }
+  .siteHeader .siteLogo{
+    margin: -100px;
+  }

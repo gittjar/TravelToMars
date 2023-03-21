@@ -1,7 +1,24 @@
-<p>marsphotos works!</p>
-<ul *ngFor="let photo of PhotoList.photos">
-    <li>{{photo.id}}</li>
-    <li>{{photo.sol}}</li>
-    <li>{{photo.camera.id}}</li>
-    </ul>
+
+
+    <h3>Photos from Mars</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let photo of PhotoList.photos | paginate: { itemsPerPage: 21, currentPage: p }">
+          <div class="card h-100" >
+           <figure class="card__thumb"><img src="{{photo.img_src}}"       
+            class="card-img-top" alt="...">
+        </figure> 
+            <div class="card-body" >
+              <h5 class="card-title">Earth date: {{photo.earth_date}} </h5>
+              <p class="card-text">Camera name: {{photo.camera.full_name}}</p>
+              <p class="card-text">Rover name: {{photo.rover.name}}</p>
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <pagination-controls class="sivuvaihto" (pageChange)="p = $event"></pagination-controls>
+
 

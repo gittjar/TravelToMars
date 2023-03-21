@@ -7,7 +7,7 @@ import { HttpClient} from '@angular/common/http';
 })
 export class MarspicService {
 
-  private photoUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY';
+  private photoUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=pfDQyQfDNFYyJohX9fymrWx5WQFlmhcmxQJdrIph';
 
   constructor(private http : HttpClient) { }
 
