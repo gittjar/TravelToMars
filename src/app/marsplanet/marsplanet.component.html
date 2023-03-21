@@ -1,1 +1,44 @@
-<p>marsplanet works!</p>
+
+
+<div class="card mb-3" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4" *ngFor="let x of marsDetails">
+        <figure>
+        <img src="{{'assets/' + x.image}}" class="img-fluid rounded-start">
+    </figure>
+      </div>
+      <div class="col-md-8">
+<article class="korttitekstit">
+        <section class="card text-bg-light mb-3 border-dark" style="max-width: 20rem;" *ngFor="let x of marsDetails" >
+          <h3 class="card-header">{{x.name}}</h3>
+          <div class="card-body">
+          <p class="card-text">Kallistuma: {{x.inclination}}</p>
+          <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
+          <p class="card-text">Painovoima: {{x.gravity}}</p>
+          <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
+            Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
+          </p>
+          <p class="card-text">Planeetta: {{x.isPlanet}}</p>
+        </div>
+        </section>
+
+
+          <section class="card text-bg-light mb-3" style="max-width: 20rem;" *ngFor="let x of phobosDetails" >
+            <h3 class="card-header">{{x.name}} ({{x.bodyType}})</h3>
+            <div class="card-body">
+            <p class="card-text">Kallistuma: {{x.inclination}}</p>
+            <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
+            <p class="card-text">Painovoima: {{x.gravity}}</p>
+            <p class="card-text">Löydetty: {{x.discoveryDate}} ja löytäjä: {{x.discoveredBy}}</p>
+            </div>
+        </section>
+
+
+
+
+</article>
+
+      </div>
+    </div>
+  </div>
+

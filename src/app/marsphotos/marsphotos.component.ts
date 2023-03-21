@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MarspicService } from '../services/marspic.service';
 
-
-
 @Component({
   selector: 'app-marsphotos',
   templateUrl: './marsphotos.component.html',
@@ -15,9 +13,6 @@ export class MarsphotosComponent implements OnInit {
 
   PhotoList : any;
   p: number = 1;
-
-
-
 
   ngOnInit(): void {
     this.getPhotos();
