@@ -1,0 +1,54 @@
+
+/*Keskellä olevat kortit menee mobiilissa alekkain*/
+.korttitekstit{
+    display: flex;
+    flex-direction: row;
+}
+/* Mobile CSS rules */ 
+@media only screen and (max-width: 425px) 
+{ 
+    .korttitekstit{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+p {
+font-size: 0.8rem;
+}
+
+
+/* kuvien määritykset */
+figure {
+    width: 100%;
+   /* border: black solid 1px; */
+    padding: 0.1rem;
+}    
+figure img {
+    max-width: 100%;  
+}
+
+.card{
+    margin: 1%; 
+}
+
+/*skaalaa kuvan sopivaksi korttiin*/
+.card__thumb {
+    /*HUOM säädä näitä sopivaksi*/
+    position: relative;
+    padding-bottom: 65%;
+    height: 0;
+    margin: 1px;
+}
+
+.card__thumb img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

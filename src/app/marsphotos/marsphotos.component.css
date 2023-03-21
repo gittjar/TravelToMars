@@ -4,15 +4,29 @@
     background: rgb(51, 10, 199);
     border-radius: 5px;
     box-shadow: rgba(66, 10, 219, 0.7) 0px 5px 5px 0px;
+    margin: 1%;
   }
 .ngx-pagination {
     background-color: rgb(225, 225, 224);
 }
 
 
-
-.card, h3 {
+h3 { margin: 1%}
+.card {
     margin: 1%;
+    background-image: -webkit-gradient(
+        linear,
+        right top,
+        right top,
+        color-stop(0, #E031E6),
+        color-stop(1, #614CFF)
+    );
+    background-image: -o-linear-gradient(right top, #E031E6 0%, #614CFF 100%);
+    background-image: -moz-linear-gradient(right top, #E031E6 0%, #614CFF 100%);
+    background-image: -webkit-linear-gradient(right top, #E031E6 0%, #614CFF 100%);
+    background-image: -ms-linear-gradient(right top, #E031E6 0%, #614CFF 100%);
+    background-image: linear-gradient(to right top, #E031E6 0%, #614CFF 100%);
+    
 }
 /* kuvien määritykset */
 figure {
