@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MarsphotosComponent } from './marsphotos/marsphotos.component';
 import { MarsplanetComponent } from './marsplanet/marsplanet.component';
+import { NgxPaginationModule } from 'ngx-pagination'; // pagination module
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MarsplanetComponent } from './marsplanet/marsplanet.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
