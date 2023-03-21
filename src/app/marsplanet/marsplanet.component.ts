@@ -10,25 +10,32 @@ export class MarsplanetComponent implements OnInit  {
 
   constructor (private dataService : MarsplanetService){}
 
-  marsDetails: any;
+  marsDetails : any;
   phobosDetails : any;
+  deimosDetails : any;
 
   ngOnInit(): void {
-   this.getMarsDetais();
-   this.getPhobosDetais();
+   this.getMarsDetailz();
+   this.getPhobosDetailz();
+   this.getDeimosDetailz();
   }
 
-  getMarsDetais(): void {
+  getMarsDetailz(): void {
     this.dataService.getMarsDetais().subscribe((data: any) => {
       this.marsDetails = data;
     })
   }
 
-  getPhobosDetais(): void {
+  getPhobosDetailz(): void {
     this.dataService.getPhobosDetails().subscribe((data: any) =>{
       this.phobosDetails = data;
     })
   }
-  
 
+  getDeimosDetailz(): void {
+    this.dataService.getDeimosDetails().subscribe((data: any) => {
+      this.deimosDetails = data;
+    })
+  }  
+  
 }

@@ -1,8 +1,19 @@
 
+/*Keskellä olevat kortit menee mobiilissa alekkain*/
 .korttitekstit{
     display: flex;
     flex-direction: row;
 }
+/* Mobile CSS rules */ 
+@media only screen and (max-width: 425px) 
+{ 
+    .korttitekstit{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 
 p {
 font-size: 0.8rem;
@@ -20,19 +31,16 @@ figure img {
 }
 
 .card{
-    margin: 1%;
-    
+    margin: 1%; 
 }
 
-.planet {
-}
-
+/*skaalaa kuvan sopivaksi korttiin*/
 .card__thumb {
     /*HUOM säädä näitä sopivaksi*/
     position: relative;
-    padding-bottom: 120%;
+    padding-bottom: 65%;
     height: 0;
-    margin: 3px;
+    margin: 1px;
 }
 
 .card__thumb img {
