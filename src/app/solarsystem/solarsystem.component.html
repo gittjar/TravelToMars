@@ -1,0 +1,47 @@
+<p>solarsystem works!</p>
+
+Stars<br>
+
+
+<h2>Planets</h2>
+<!--
+<div *ngFor="let name of solarSystem.bodies">
+    <p *ngIf="name.isPlanet">
+        - Planet: {{name.isPlanet}} Show this only if "isPlanet" is true
+        id:{{name.id}} Name: {{name.englishName}} 
+      </p>
+    </div>
+  -->
+  
+
+  <div *ngFor="let x of solarSystem.bodies">
+    <div class="card mb-3" style="max-width: 18rem;" *ngIf="x.isPlanet">   
+            <div class="card-header">Planet: {{x.englishName}}</div>
+              <div class="card-body text-secondary">
+                <p class="card-text">Kallistuma: {{x.inclination}}</p>
+                <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
+                <p class="card-text">Painovoima: {{x.gravity}}</p>
+                <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
+                  Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
+                </p> 
+              </div>
+      </div>
+  </div>
+
+
+  <h2>Moons</h2>
+ 
+  <div *ngFor="let x of solarSystem.bodies">
+    <div class="card mb-3" style="max-width: 18rem;" *ngIf="!x.isPlanet">   
+            <div class="card-header">Name: {{x.englishName}} Type: {{x.bodyType}}</div>
+              <div class="card-body text-secondary">
+                <p class="card-text">Around Planet: {{x.aroundPlanet.planet}}</p>
+                <p class="card-text">Kallistuma: {{x.inclination}}</p>
+                <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
+                <p class="card-text">Painovoima: {{x.gravity}}</p>
+                <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
+                  Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
+                </p> 
+              </div>
+      </div>
+  </div>

@@ -1,0 +1,6 @@
+.card {margin: 1%;}
+
+.planets-flex {
+    display: flex;
+    flex-direction: row;
+}
