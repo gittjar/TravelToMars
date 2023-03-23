@@ -1,6 +1,22 @@
 <p>solarsystem works!</p>
 
-Stars<br>
+
+
+
+<h2>Stars</h2>
+<section class="kortit-flex">
+
+<div *ngFor="let s of solarSystem.bodies">
+  <div class="card mb-3" style="max-width: 20rem;" *ngIf="s.bodyType === 'Star'">
+          <div class="card-header">Star: {{s.englishName}}</div>
+            <div class="card-body text-secondary">
+              <p class="card-text">Mass: {{s.mass.massValue}}</p>
+              <p class="card-text">Massexponent: {{s.mass.massExponent}}</p>
+            </div>
+    </div>
+</div>
+
+</section>
 
 
 <h2>Planets</h2>
@@ -13,35 +29,80 @@ Stars<br>
     </div>
   -->
   
+  <section class="kortit-flex">
+      <div *ngFor="let x of solarSystem.bodies">
+        <div class="card mb-3" style="max-width: 20rem;" *ngIf="x.isPlanet">
 
-  <div *ngFor="let x of solarSystem.bodies">
-    <div class="card mb-3" style="max-width: 18rem;" *ngIf="x.isPlanet">   
-            <div class="card-header">Planet: {{x.englishName}}</div>
-              <div class="card-body text-secondary">
-                <p class="card-text">Kallistuma: {{x.inclination}}</p>
-                <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
-                <p class="card-text">Painovoima: {{x.gravity}}</p>
-                <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
-                  Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
-                </p> 
-              </div>
+                <div class="card-header">Planet: {{x.englishName}}</div>
+                  <div class="card-body text-secondary">
+                    <p class="card-text">Kallistuma: {{x.inclination}}</p>
+                    <p class="card-text">Mass: {{x.mass.massValue}}</p>
+                    <p class="card-text">Massexponent: {{x.mass.massExponent}}</p>
+                    <p class="card-text">Painovoima: {{x.gravity}}</p>
+                    <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
+                      Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
+                    </p> 
+                  </div>
+          </div>
       </div>
-  </div>
+  </section>
+
+
 
 
   <h2>Moons</h2>
  
-  <div *ngFor="let x of solarSystem.bodies">
-    <div class="card mb-3" style="max-width: 18rem;" *ngIf="!x.isPlanet">   
-            <div class="card-header">Name: {{x.englishName}} Type: {{x.bodyType}}</div>
-              <div class="card-body text-secondary">
-                <p class="card-text">Around Planet: {{x.aroundPlanet.planet}}</p>
-                <p class="card-text">Kallistuma: {{x.inclination}}</p>
-                <p class="card-text">Mass: {{x.mass.massValue}}, Massexponent: {{x.mass.massExponent}}</p>
-                <p class="card-text">Painovoima: {{x.gravity}}</p>
-                <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
-                  Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
-                </p> 
-              </div>
-      </div>
+<section class="kortit-flex">
+
+<div *ngFor="let x of solarSystem.bodies">
+  <div class="card mb-3" style="max-width: 20rem;" *ngIf="x.bodyType === 'Moon'">
+
+          <div class="card-header">Name: {{x.englishName}}</div>
+            <div class="card-body text-secondary">
+              <p class="card-text">Around: {{x.aroundPlanet.planet}}</p>
+              <p class="card-text">Body type: {{x.bodyType}}</p>
+            </div>
+            <div class="card-footer" style="max-width: 20rem;">
+              <small class="text-muted">Discovered: {{x.discoveryDate}} - </small> 
+              <small class="text-muted">{{x.discoveredBy}}</small>
+            </div>
+    </div>
+    </div>
+
+</section>
+
+<h2>Asteroids</h2>
+
+<section class="kortit-flex">
+
+<div *ngFor="let ast of solarSystem.bodies">
+  <div class="card mb-3" style="max-width: 20rem;" *ngIf="ast.bodyType === 'Asteroid'">
+      <div class="card-header">Name: {{ast.englishName}}</div>
+      <div class="card-body text-secondary">
+      <p class="card-text">Body type: {{ast.bodyType}}</p>
+    </div>
+    <div class="card-footer" style="max-width: 20rem;">
+      <small class="text-muted">Discovered: {{ast.discoveryDate}} - </small> 
+      <small class="text-muted">{{ast.discoveredBy}}</small>
+    </div>
   </div>
+</div>
+   </section>       
+        
+   <h2>Comets</h2>
+
+   <section class="kortit-flex">
+
+    <div *ngFor="let comet of solarSystem.bodies">
+      <div class="card mb-3" style="max-width: 20rem;" *ngIf="comet.bodyType === 'Comet'">
+          <div class="card-header">Name: {{comet.englishName}}</div>
+          <div class="card-body text-secondary">
+          <p class="card-text">Body type: {{comet.bodyType}}</p>
+        </div>
+        <div class="card-footer" style="max-width: 20rem;">
+          <small class="text-muted">Discovered: {{comet.discoveryDate}} - </small> 
+          <small class="text-muted">{{comet.discoveredBy}}</small>
+        </div>
+      </div>
+    </div>
+       </section>   
