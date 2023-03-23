@@ -1,0 +1,11 @@
+h2 {
+    margin-left: 1.5%;
+}
+
+.card {margin: 1%;}
+
+.kortit-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* only needed for responsive */
+}
