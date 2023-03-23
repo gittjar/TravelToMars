@@ -11,7 +11,6 @@ export class SolarsystemComponent implements OnInit {
   constructor(private hpservice : SolarsysService){}
 
   solarSystem : any;
-  
 
   ngOnInit(): void {
     this.getSolarsystemDetails();

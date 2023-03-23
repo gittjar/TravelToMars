@@ -7,11 +7,21 @@
 <section class="kortit-flex">
 
 <div *ngFor="let s of solarSystem.bodies">
-  <div class="card mb-3" style="max-width: 20rem;" *ngIf="s.bodyType === 'Star'">
+  <div class="card mb-3" style="width: 15rem;" *ngIf="s.bodyType === 'Star'">
           <div class="card-header">Star: {{s.englishName}}</div>
             <div class="card-body text-secondary">
-              <p class="card-text">Mass: {{s.mass.massValue}}</p>
-              <p class="card-text">Massexponent: {{s.mass.massExponent}}</p>
+
+              <p class="card-text">Mass: 
+                <span class="badge bg-primary badge-pill">
+                {{s.mass.massValue}}</span></p>
+
+                <p class="card-text">Massexponent: 
+                <span class="badge bg-primary rounded-pill">
+                 {{s.mass.massExponent}}</span></p>
+
+               <p class="card-text">Keskisäde: <span class="badge bg-dark badge-pill">
+                {{s.meanRadius}}</span></p>
+
             </div>
     </div>
 </div>
@@ -29,23 +39,49 @@
     </div>
   -->
   
-  <section class="kortit-flex">
+    <section class="kortit-flex">
       <div *ngFor="let x of solarSystem.bodies">
-        <div class="card mb-3" style="max-width: 20rem;" *ngIf="x.isPlanet">
+        <div class="card mb-3" style="width: 20rem;" *ngIf="x.isPlanet">
 
-                <div class="card-header">Planet: {{x.englishName}}</div>
+                <div class="card-header">Planet: 
+                  <span class="badge bg-success badge-pill">{{x.englishName}}
+                    </span>
+                  </div>
                   <div class="card-body text-secondary">
-                    <p class="card-text">Kallistuma: {{x.inclination}}</p>
-                    <p class="card-text">Mass: {{x.mass.massValue}}</p>
-                    <p class="card-text">Massexponent: {{x.mass.massExponent}}</p>
-                    <p class="card-text">Painovoima: {{x.gravity}}</p>
-                    <p class="card-text">Keskilämpötila: {{x.avgTemp}} K = 
-                      Celcius: {{x.avgTemp - 273.15 | number: '1.0-1'}}
-                    </p> 
+
+                    <p class="card-text">Kallistuma: 
+                      <span class="badge bg-secondary badge-pill">
+                      {{x.inclination}}</span></p>
+
+                    <p class="card-text">Mass: 
+                      <span class="badge bg-primary badge-pill">
+                      {{x.mass.massValue}}</span></p>
+
+                    <p class="card-text">Massexponent: 
+                      <span class="badge bg-primary rounded-pill">
+                     {{x.mass.massExponent}}</span></p>
+                     
+                     <p class="card-text">Keskisäde: <span class="badge bg-dark badge-pill">
+                      {{x.meanRadius}}</span></p>
+
+                    <p class="card-text">Painovoima: 
+                      <span class="badge bg-secondary badge-pill">
+                        {{x.gravity}}
+                      </span></p>
+
+                    <p class="card-text">Keskilämpötila:
+                     
+                      <span *ngIf="x.avgTemp > 273.15" class="badge bg-warning badge-pill">
+                        {{x.avgTemp - 273.15 | number: '1.0-1'}} C
+                      </span>
+                        <span *ngIf="x.avgTemp < 273.15" class="badge bg-info badge-pill">
+                      {{x.avgTemp - 273.15 | number: '1.0-1'}} C
+                    </span>
+                    </p>  
                   </div>
           </div>
       </div>
-  </section>
+    </section>
 
 
 
