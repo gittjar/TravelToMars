@@ -1,3 +1,9 @@
+.site {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 4px #cccccc  solid;
+}
+
 
 .siteHeader{
     width: 100%;
@@ -9,3 +15,15 @@
   .siteHeader .siteLogo{
     margin: -100px;
   }
+
+  /* Centered text */
+.centered {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 3.4rem;
+  color: rgb(210, 150, 72);
+  font-family: 'Nabla', cursive;
+
+}

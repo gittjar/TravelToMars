@@ -1,5 +1,8 @@
 
 
+
+
+
 .sivuvaihto ::ng-deep .ngx-pagination .current {
     background: rgb(51, 10, 199);
     border-radius: 5px;
@@ -11,7 +14,10 @@
 }
 
 
-h3 { margin: 1%}
+h3 { margin: 1%;
+}
+
+
 .card {
     margin: 1%;
     background-image: -webkit-gradient(
