@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: 'Bungee';
+    src: url('/src/assets/fonts/Bungee_Spice/BungeeSpice-Regular.ttf');
+  }
+
+.green-snackbar {
+    background: rgb(93, 212, 137);
+    color: white;
+}
+.green-snackbar button {
+    background-color: rgb(5, 162, 63);
+    color: white;
+    border: none;
+}

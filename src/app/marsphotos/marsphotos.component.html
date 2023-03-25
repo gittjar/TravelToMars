@@ -1,9 +1,22 @@
 
 
     <h3>Photos from Mars</h3>
+    
+
+    <ul>
+      <li *ngFor="let item of photoItems">{{item}}</li>
+    </ul>
+
+   
+
+
+    
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col" *ngFor="let photo of PhotoList.photos | paginate: { itemsPerPage: 21, currentPage: p }">
-          <div class="card h-100" >
+          <div class="card h-100">
+          
+              <h5 class="card-title">Photo id: {{photo.id}}</h5>
+          
            <figure class="card__thumb"><img src="{{photo.img_src}}"       
             class="card-img-top" alt="...">
         </figure> 
@@ -13,6 +26,10 @@
               <p class="card-text">Rover name: {{photo.rover.name}}</p>
 
             </div>
+            <!-- if you want use input @output event!
+            <app-item-output (uusiItemEvent)="addItem($event)"></app-item-output>
+              -->
+       <button type="button" class="btn btn-primary btn-sm" (click)="addItem(photo.id)">Add to Favourite</button>
           </div>
         </div>
     </div>

@@ -1,0 +1,15 @@
+.nav {
+    background-color: #cccccc;
+        height: 40px;
+    font-size: 0.9rem;
+
+}
+a{
+    color: rgb(20, 3, 71);
+
+}
+
+a:hover{
+    background-color: #cccccc;
+    color: rgb(20, 3, 71);
+}

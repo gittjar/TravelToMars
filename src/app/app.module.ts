@@ -11,6 +11,13 @@ import { MarsplanetComponent } from './marsplanet/marsplanet.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SolarsystemComponent } from './solarsystem/solarsystem.component'; // pagination module
 
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrderformComponent } from './orderform/orderform.component';
+import { ItemOutputComponent } from './item-output/item-output.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,14 +25,20 @@ import { SolarsystemComponent } from './solarsystem/solarsystem.component'; // p
     NavbarComponent,
     MarsphotosComponent,
     MarsplanetComponent,
-    SolarsystemComponent
+    SolarsystemComponent,
+    OrderformComponent,
+    ItemOutputComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

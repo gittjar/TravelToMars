@@ -1,0 +1,32 @@
+<div class="container">
+    <h3>Angular storage using window object</h3>
+    <form #userForm="ngForm" class="form">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" [(ngModel)]="person.name" name="name" #nameCtrl="ngModel">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input class="form-control" [(ngModel)]="person.country" name="email" #emailCtrl="ngModel">
+      </div>
+    </form>
+  
+    <div class="d-md-flex justify-content-md-end">
+      <button type="button" class="btn btn-primary btn-sm" (click)="setStorage()">Set storage data</button>
+      <button type="button" class="btn btn-primary btn-sm"(click)="getStorage()">
+         Get storage data
+      </button>
+  
+      <button type="button" class="btn btn-primary btn-sm" (click)="removeItemStorage('name')">
+       Remove name local storage
+       </button>
+      <button type="button" class="btn btn-warning btn-sm" (click)="clearAllStorage()">
+       Clear all storage
+      </button>
+    </div>
+  
+    <div>
+      <p>Storage name: {{ storageName }}</p>
+      <p>Storage Object: {{ storageObject | json }}</p>
+    </div>
+  </div>
