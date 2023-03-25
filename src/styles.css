@@ -7,3 +7,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: 'Bungee';
     src: url('/src/assets/fonts/Bungee_Spice/BungeeSpice-Regular.ttf');
   }
+
+.green-snackbar {
+    background: rgb(93, 212, 137);
+    color: white;
+}
+.green-snackbar button {
+    background-color: rgb(5, 162, 63);
+    color: white;
+    border: none;
+}

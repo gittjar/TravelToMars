@@ -3,7 +3,9 @@
     <h3>Photos from Mars</h3>
     
 
-
+    <ul>
+      <li *ngFor="let item of photoItems">{{item}}</li>
+    </ul>
 
    
 
@@ -24,7 +26,10 @@
               <p class="card-text">Rover name: {{photo.rover.name}}</p>
 
             </div>
-       
+            <!-- if you want use input @output event!
+            <app-item-output (uusiItemEvent)="addItem($event)"></app-item-output>
+              -->
+       <button type="button" class="btn btn-primary btn-sm" (click)="addItem(photo.id)">Add to Favourite</button>
           </div>
         </div>
     </div>

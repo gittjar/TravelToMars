@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderformComponent } from './orderform/orderform.component';
+import { ItemOutputComponent } from './item-output/item-output.component';
 
 
 
@@ -26,6 +27,7 @@ import { OrderformComponent } from './orderform/orderform.component';
     MarsplanetComponent,
     SolarsystemComponent,
     OrderformComponent,
+    ItemOutputComponent,
     
   ],
   imports: [

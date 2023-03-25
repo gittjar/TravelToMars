@@ -17,9 +17,12 @@ export class MarsphotosComponent implements OnInit{
   PhotoList : any;
   p: number = 1;
 
+  // array johon tieto menee, addItem functiosta
+  photoItems = new Array();
+  
   ngOnInit(): void {
     this.getPhotos();
-    this.huomio.open('Kuvat ladattu!', 'OK', {duration: 2000});
+    this.huomio.open('Kuvat ladattu!', 'OK!', {duration: 2000, panelClass: ['green-snackbar']});
   }
 
 
@@ -29,9 +32,12 @@ export class MarsphotosComponent implements OnInit{
     })
   } 
 
+  addItem(newItem: string) {
+    this.photoItems.push(newItem);
+    this.huomio.open('Kuva id: ' + newItem + ' tallennettu suosikkeihin!', 'OK', {duration: 2500});
+  }
 
+  }
 
-
-}
 
 
