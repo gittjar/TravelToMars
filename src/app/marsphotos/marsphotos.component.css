@@ -62,3 +62,14 @@ figure img {
 ul {
     list-style: none;
 }
+
+.favlist {
+    background-color: rgb(199, 198, 197);
+    width: 20%;
+    height: 50px;
+    margin-left: 2%;
+    padding: 1%;
+    margin-bottom: 3px;
+    border:1px solid #676768;
+    border-radius: 5px;
+}
