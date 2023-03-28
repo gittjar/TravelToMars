@@ -17,12 +17,14 @@ export class MarsphotosComponent implements OnInit{
   PhotoList : any;
   p: number = 1;
 
+
   // array johon tieto menee, addItem functiosta
   photoItems = new Array();
   
   ngOnInit(): void {
     this.getPhotos();
-    this.huomio.open('Kuvat ladattu!', 'OK!', {duration: 2000, panelClass: ['green-snackbar']});
+    this.huomio.open('Ladataan kuvat!', 'OK!', {duration: 2000, panelClass: ['green-snackbar']});
+    this.GetAllFavPhotos();
   }
 
 
@@ -34,10 +36,44 @@ export class MarsphotosComponent implements OnInit{
 
   addItem(newItem: string) {
     this.photoItems.push(newItem);
+    this.SavePhoto();
     this.huomio.open('Kuva id: ' + newItem + ' tallennettu suosikkeihin!', 'OK', {duration: 2500});
   }
 
+
+  SavePhoto() {
+    localStorage.setItem("favorites", JSON.stringify(this.photoItems));
   }
+
+  DeleteAllPhotos() {
+    this.photoItems = [];
+    this.SavePhoto();
+  }
+
+  onRemoveFavorite(id: number) {
+    const position = id + 0;
+    this.photoItems.splice(position, 1);
+    this.SavePhoto();
+    this.huomio.open('Suosikki poistettu onnistuneesti!', 'OK', {duration: 2500});
+
+  }
+
+  GetAllFavPhotos() {
+    let value = localStorage.getItem("favorites");
+    if (value != '' && value != null && typeof value != "undefined")
+    {
+      this.photoItems = JSON.parse(value!);
+    }
+
+  }
+
+
+  
+
+
+}
+
+  
 
 
 

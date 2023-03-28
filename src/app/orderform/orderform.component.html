@@ -29,4 +29,41 @@
       <p>Storage name: {{ storageName }}</p>
       <p>Storage Object: {{ storageObject | json }}</p>
     </div>
+
+ <!--PACKING LIST-->
+ <h3>Local storage, list of packed items.</h3>
+
+    <div class="row">
+      <div class="col-5">
+        <input type="text" class="form-control" placeholder="Enter equipment" [(ngModel)]="equipment" />
+     <br>
+      </div>
+      <div class="col-1">
+        
+        <button class="btn btn-primary" (click)="Add()">Add</button>
+        
+      </div>
+      <div class="col-2">
+        <button class="btn btn-danger" (click)="DeleteAll()">Delete All</button>
+      </div>
+    </div>
+    
+    <div class="row m-3" *ngFor="let item of packinglist; let i=index">
+      <div class="col-1">
+        <button class="btn btn-danger btn-sm pull-right" (click)="Delete(i)">Delete</button>
+      </div>
+      <div class="col-5">
+        <div class="form-check my-1">
+          <input class="form-check-input" (change)="ChangeStatus(i,item.IsPacked)" type="checkbox"
+            [checked]="item.IsPacked" id="{{i}}">
+          <label class="form-check-label" for="{{i}}" *ngIf="item.IsPacked">
+            <s>{{item.EquipmentName}}</s>
+          </label>
+          <label class="form-check-label" for="{{i}}" *ngIf="!item.IsPacked">
+            {{item.EquipmentName}}
+          </label>
+        </div>
+      </div>
+    </div>
+    
   </div>
