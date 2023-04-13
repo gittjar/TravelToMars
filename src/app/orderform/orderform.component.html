@@ -34,17 +34,20 @@
  <h3>Local storage, list of packed items.</h3>
 
     <div class="row">
-      <div class="col-5">
+      <div class="col-3">
         <input type="text" class="form-control" placeholder="Enter equipment" [(ngModel)]="equipment" />
      <br>
       </div>
-      <div class="col-1">
+      <div class="col-2">
         
-        <button class="btn btn-primary" (click)="Add()">Add</button>
+        <button class="btn btn-primary" (click)="Add()"><mat-icon>add_circle_outline</mat-icon>
+          Add</button>
         
       </div>
-      <div class="col-2">
-        <button class="btn btn-danger" (click)="DeleteAll()">Delete All</button>
+      <div class="col-3">
+        <button class="btn btn-danger" (click)="DeleteAll()"><mat-icon>remove_circle_outline</mat-icon>
+        Delete All
+        </button>
       </div>
     </div>
     

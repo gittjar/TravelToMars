@@ -16,6 +16,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrderformComponent } from './orderform/orderform.component';
 import { ItemOutputComponent } from './item-output/item-output.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -28,6 +32,7 @@ import { ItemOutputComponent } from './item-output/item-output.component';
     SolarsystemComponent,
     OrderformComponent,
     ItemOutputComponent,
+    FavouritesComponent,
     
   ],
   imports: [
@@ -38,7 +43,8 @@ import { ItemOutputComponent } from './item-output/item-output.component';
     NgxPaginationModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

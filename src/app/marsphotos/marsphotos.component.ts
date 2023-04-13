@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarspicService } from '../services/marspic.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FavoritService } from '../favorit.service';
 
 @Component({
   selector: 'app-marsphotos',
@@ -12,7 +13,8 @@ export class MarsphotosComponent implements OnInit{
   photos: any;
   constructor (
     private hpservice : MarspicService, 
-    private huomio : MatSnackBar) {}
+    private huomio : MatSnackBar,
+    private httpFav : FavoritService) {}
 
   PhotoList : any;
   p: number = 1;
@@ -20,6 +22,7 @@ export class MarsphotosComponent implements OnInit{
 
   // array johon tieto menee, addItem functiosta
   photoItems = new Array();
+
   
   ngOnInit(): void {
     this.getPhotos();
@@ -63,15 +66,18 @@ export class MarsphotosComponent implements OnInit{
     if (value != '' && value != null && typeof value != "undefined")
     {
       this.photoItems = JSON.parse(value!);
+    }}
+
+// This adds Favorite to Cart
+    addToFavoriteCart(addFavorite: string){
+      this.httpFav.addToFavorite(addFavorite);
+      this.huomio.open('Suosikki lisätty onnistuneesti Favoritesiin!', 'OK', {duration: 2500});
     }
+
 
   }
 
 
-  
-
-
-}
 
   
 
