@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "travel-to-mars-app:build:production",
+            "firebaseProject": "angular-web-applications",
+            "firebaseHostingSite": "marsplanet"
+          }
         }
       }
     }
