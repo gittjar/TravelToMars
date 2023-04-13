@@ -6,10 +6,24 @@ h2 {
     border: 1px solid #181717;
 }
 
-.card, button {margin: 1%;}
+.card, button {
+    margin: 1%;
+}
 
 .kortit-flex {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* only needed for responsive */
+    flex-wrap: wrap;
+    margin: 1%;
+
+
+       
+}
+
+.kortit-flex-moons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1%;
+
 }
